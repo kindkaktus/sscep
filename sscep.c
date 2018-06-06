@@ -866,7 +866,7 @@ not_enroll:
 			}
 			/* User supplied serial number */
 			if (s_flag) {
-				BIGNUM *bn;
+				BIGNUM *bn = NULL;
 				ASN1_INTEGER *ai;
 				int len = BN_dec2bn(&bn , s_char);
 				if (!len || !(ai = BN_to_ASN1_INTEGER(bn, NULL))) {
